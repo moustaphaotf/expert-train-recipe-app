@@ -1,12 +1,17 @@
 "use client";
 
-function RecipeList({ recipes }) {
+function RecipeList({ recipes, selectedRecipeId }) {
   return (
     <div className="recipe-list">
       <h2>My Recipes</h2>
       <div className="recipe-cards">
         {recipes.map((recipe) => (
-          <div key={recipe.id} className={`recipe-card`}>
+          <div
+            key={recipe.id}
+            className={`recipe-card ${
+              selectedRecipeId === recipe.id ? "selected" : ""
+            }`}
+          >
             <h3>{recipe.name}</h3>
             <div className="recipe-meta">
               <span className="ingredient-count">

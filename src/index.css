@@ -102,6 +102,48 @@ body {
   padding: 20px;
 }
 
+/* Ingredients section */
+.ingredients-section {
+  margin-bottom: 30px;
+}
+
+.ingredients-section h3 {
+  margin-bottom: 15px;
+  color: #4a6fa5;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 8px;
+}
+
+.ingredients-list {
+  list-style-type: none;
+}
+
+.ingredient-item {
+  padding: 8px 0;
+  border-bottom: 1px dashed #e9ecef;
+}
+
+.ingredient-item:last-child {
+  border-bottom: none;
+}
+
+/* Instructions section */
+.instructions-section h3 {
+  margin-bottom: 15px;
+  color: #4a6fa5;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 8px;
+}
+
+.instructions-list {
+  padding-left: 20px;
+}
+
+.instruction-step {
+  margin-bottom: 12px;
+  padding-left: 10px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .recipe-cards {
@@ -122,3 +164,4 @@ body {
     grid-template-columns: 1fr;
   }
 }
+

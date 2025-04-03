@@ -1,3 +1,6 @@
+"use client";
+
+import Recipe from "./Recipe";
 import RecipeList from "./RecipeList";
 
 function App() {
@@ -73,15 +76,20 @@ function App() {
     },
   ];
 
+  const selectedRecipeId = recipes[0].id;
+
+  const selectedRecipe = recipes.find(
+    (recipe) => recipe.id === selectedRecipeId
+  );
+
   return (
     <div className="app">
       <header className="app-header">
         <h1>Recipe Book</h1>
       </header>
       <main>
-        <RecipeList
-          recipes={recipes}
-        />
+        <RecipeList recipes={recipes} selectedRecipeId={selectedRecipeId} />
+        {selectedRecipe && <Recipe recipe={selectedRecipe} />}
       </main>
     </div>
   );
