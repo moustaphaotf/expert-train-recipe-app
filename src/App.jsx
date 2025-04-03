@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Recipe from "./Recipe";
 import RecipeList from "./RecipeList";
 
@@ -76,7 +77,7 @@ function App() {
     },
   ];
 
-  const selectedRecipeId = recipes[0].id;
+  const [selectedRecipeId, setSelectedRecipeId] = useState(recipes[0].id);
 
   const selectedRecipe = recipes.find(
     (recipe) => recipe.id === selectedRecipeId
@@ -88,7 +89,11 @@ function App() {
         <h1>Recipe Book</h1>
       </header>
       <main>
-        <RecipeList recipes={recipes} selectedRecipeId={selectedRecipeId} />
+        <RecipeList
+          recipes={recipes}
+          onSelectRecipe={setSelectedRecipeId}
+          selectedRecipeId={selectedRecipeId}
+        />
         {selectedRecipe && <Recipe recipe={selectedRecipe} />}
       </main>
     </div>

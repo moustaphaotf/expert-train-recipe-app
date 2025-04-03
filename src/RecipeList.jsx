@@ -1,6 +1,6 @@
 "use client";
 
-function RecipeList({ recipes, selectedRecipeId }) {
+function RecipeList({ recipes, onSelectRecipe, selectedRecipeId }) {
   return (
     <div className="recipe-list">
       <h2>My Recipes</h2>
@@ -11,6 +11,7 @@ function RecipeList({ recipes, selectedRecipeId }) {
             className={`recipe-card ${
               selectedRecipeId === recipe.id ? "selected" : ""
             }`}
+            onClick={() => onSelectRecipe(recipe.id)}
           >
             <h3>{recipe.name}</h3>
             <div className="recipe-meta">
